@@ -87,7 +87,7 @@ from victron import action as victron_action
 if __name__ == "__main__":
   for tag in ["batterycharge", "solarpower", "inverterpower", "batterycurrent"]:
     value = victron_action("", f'get{tag}')
-    influx_action('photovoltaics-{tag}', "addvalue", value)
+    influx_action(f'photovoltaics-{tag}', "addvalue", value)
 ```
 
 and adding it to cron
@@ -97,7 +97,7 @@ crontab -e
 ```
 
 ```
-*/5  * * * * python3 automation_solar_to_db.py
+*/5  * * * * python3 $HOME/suckless-smarthome/automation_solar_to_db.py
 ```
 
 ##### Example: Control a fan depending on temperature
@@ -125,7 +125,26 @@ crontab -e
 ```
 
 ```
-*/2  * * * * python3 automation_fan_control.py
+*/2  * * * * python3 $HOME/suckless-smarthome/automation_fan_control.py
+```
+
+##### Example: Create Graphs
+
+```py
+from graph import action as graph_action
+
+if __name__ == "__main__":
+    graph_action("refridgerator-freezer", "graph")
+    graph_action("photovoltaics-solarpower", "graph")
+    graph_action("photovoltaics-batterycharge", "graph")
+```
+
+```
+crontab -e
+```
+
+```
+*/2  * * * * python3 $HOME/suckless-smarthome/automation_create_graphs.py
 ```
 
 #### Devices
@@ -191,7 +210,7 @@ Read a value
 ```sh
 python3 esphome.py --action getvalue --device refridgerator-freezer
 
-10.9375
+-17.9375
 ```
 
 ##### FritzDect
@@ -233,7 +252,7 @@ python3 fritz_dect.py --action gettemperature --device livingroom-socket
 Get switch state
 
 ```sh
-python3 fritz_dect.py --action getstate --device Steckdose2
+python3 fritz_dect.py --action getstate --device livingroom-socket
 
 1
 ```
@@ -241,13 +260,13 @@ python3 fritz_dect.py --action getstate --device Steckdose2
 Turn device on
 
 ```sh
-python3 fritz_dect.py --action seton --device Steckdose2
+python3 fritz_dect.py --action seton --device livingroom-socket
 ```
 
 or off
 
 ```sh
-python3 fritz_dect.py --action setoff --device Steckdose2
+python3 fritz_dect.py --action setoff --device livingroom-socket
 ```
 
 ##### Fritzbox
@@ -290,7 +309,7 @@ python3 fritzbox.py --action getdownstreamutilization
 
 ##### Victron
 
-Enable Mqtt on Victron OS device. Configure credendials in ```config.yml```:
+Enable MQTT on Victron OS device. Configure credendials in ```config.yml```:
 
 ```sh
 victron_ip: <ip address of victron os device>

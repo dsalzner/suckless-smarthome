@@ -44,6 +44,12 @@ def action(device, action):
     if action == "setoff":
         requests.put(url, data = "{\"on\":false}")
 
+    url = f'http://{config["philips_hue_ip"]}/api/{config["philips_hue_token"]}/groups/1/action'
+    if action == "allon":
+        requests.put(url, data = "{\"on\":true}")
+    if action == "alloff":
+        requests.put(url, data = "{\"on\":false}")
+
     return ""
 
 if __name__ == "__main__":

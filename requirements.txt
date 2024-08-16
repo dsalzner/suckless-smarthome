@@ -1,0 +1,5 @@
+paho-mqtt
+influxdb
+xmltodict
+pandas
+matplotlib

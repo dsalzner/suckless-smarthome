@@ -26,7 +26,7 @@ def _add(measurement, value):
     client.write_points(data)
 
 def _list(device, duration):
-    query = f'select * from {device} where time > now() - {duration};'
+    query = f'select * from "{device}" where time > now() - {duration};'
     records = client.query(query)
     entries = []
     for k, v in records.items():

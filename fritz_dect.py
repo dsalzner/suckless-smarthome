@@ -31,7 +31,6 @@ def _challengeResponse():
     sid = dict_data["SessionInfo"]["SID"]
 
     return sid
- 
 
 def _getDeviceList():
     sid = _challengeResponse()
