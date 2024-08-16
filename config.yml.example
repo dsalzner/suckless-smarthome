@@ -1,0 +1,15 @@
+philips_hue_ip: <ip address of hue bridge>
+philips_hue_token:  <user token of hue brige>
+esphome_<custom name for esphome device>_ip: <ip address of esp home>
+esphome_<custom name for esphome device>_sensor: <name of the sensor to read from esphome device>
+fritzdect_ip: <ip address of fritzbox>
+fritzdect_user: <login username for fritzbox>
+fritzdect_password: <login password for fritzbox>
+victron_ip: <ip address of victron os device>
+victron_id: <id of victron os device>
+influx_ip: <ip address of influxdb>
+influx_db: <database name in influxdb>
+yamahaavr_ip: <ip address of AV Receiver>
+fritzbox_ip: <ip address of fritzbox>
+fritzbox_user: <login username for fritzbox>
+fritzbox_password: <login password for fritzbox>
