@@ -15,19 +15,19 @@ with open(os.path.join(SCRIPT_DIR, 'config.yml'), 'r') as file:
 def action(device, action):
     if action == "list":
         for key in config.keys():
-            if key.startswith("esphome_") and key.endswith("_ip"):
-                print(key.replace("esphome_", "").replace("_ip", ""))
+            if key.startswith("shelly_") and key.endswith("_ip"):
+                print(key.replace("shelly_", "").replace("_ip", ""))
         return ""
 
-    if action == "getvalue":
-        url = f'http://{config["esphome_" + device + "_ip"]}/sensor/{config["esphome_" + device + "_sensor"]}'
+    if action == "getpower":
+        url = f'http://{config["shelly_" + device + "_ip"]}/rpc/Switch.GetStatus?id=0'
         resp = requests.get(url=url, params={})
-        return resp.json()["value"]
+        return resp.json()["apower"]
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        prog='EspHome Binding',
-        description='EspHome for Suckless SmartHome')
+        prog='Shelly Binding',
+        description='Shelly for Suckless SmartHome')
     parser.add_argument('-d', '--device')
     parser.add_argument('-a', '--action')
     args = parser.parse_args()

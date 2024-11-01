@@ -9,4 +9,5 @@ from victron import action as victron_action
 if __name__ == "__main__":
     for tag in ["batterycharge", "solarpower", "inverterpower", "batterycurrent"]:
         value = victron_action("", f'get{tag}')
-        influx_action(f'photovoltaics-{tag}', "addvalue", value)
+        print(value)
+        influx_action(f'photovoltaics_{tag}', "addvalue", value)

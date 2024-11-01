@@ -3,13 +3,14 @@
 Suckless Smarthome
 2024 D.Salzner <mail@dennissalzner.de>
 """
-
 from influxdb import InfluxDBClient
 import argparse
+import os
 import requests
 import yaml
 
-with open('config.yml', 'r') as file:
+SCRIPT_DIR=os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(SCRIPT_DIR, 'config.yml'), 'r') as file:
     config = yaml.safe_load(file)
 
 client = InfluxDBClient(config["influx_ip"], 8086, 'root', 'root', config["influx_db"])
@@ -26,7 +27,7 @@ def _add(measurement, value):
     client.write_points(data)
 
 def _list(device, duration):
-    query = f'select * from "{device}" where time > now() - {duration};'
+    query = f'select * from "{device}" where time>now()-{duration};'
     records = client.query(query)
     entries = []
     for k, v in records.items():

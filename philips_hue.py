@@ -7,10 +7,12 @@ Suckless Smarthome
 import argparse
 from collections import defaultdict
 import json
+import os
 import requests
 import yaml
 
-with open('config.yml', 'r') as file:
+SCRIPT_DIR=os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(SCRIPT_DIR, 'config.yml'), 'r') as file:
     config = yaml.safe_load(file)
 
 def _getDeviceList():

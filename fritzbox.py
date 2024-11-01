@@ -5,12 +5,14 @@ Suckless Smarthome
 """
 
 import argparse
+import os
 import requests
 from requests.auth import HTTPDigestAuth
 import yaml
 import xmltodict
 
-with open('config.yml', 'r') as file:
+SCRIPT_DIR=os.path.dirname(os.path.realpath(__file__))
+with open(os.path.join(SCRIPT_DIR, 'config.yml'), 'r') as file:
     config = yaml.safe_load(file)
 
 def _get(service_type, control_url, field_1, field_2):

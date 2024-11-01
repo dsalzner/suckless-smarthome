@@ -1,15 +1,49 @@
-philips_hue_ip: <ip address of hue bridge>
-philips_hue_token:  <user token of hue brige>
-esphome_<custom name for esphome device>_ip: <ip address of esp home>
-esphome_<custom name for esphome device>_sensor: <name of the sensor to read from esphome device>
-fritzdect_ip: <ip address of fritzbox>
-fritzdect_user: <login username for fritzbox>
-fritzdect_password: <login password for fritzbox>
-victron_ip: <ip address of victron os device>
-victron_id: <id of victron os device>
-influx_ip: <ip address of influxdb>
-influx_db: <database name in influxdb>
-yamahaavr_ip: <ip address of AV Receiver>
-fritzbox_ip: <ip address of fritzbox>
-fritzbox_user: <login username for fritzbox>
-fritzbox_password: <login password for fritzbox>
+philips_hue_ip: <your-configuration-here>
+philips_hue_token: <your-configuration-here>
+esphome_fridge-cooler_ip: <your-configuration-here>
+esphome_fridge-cooler_sensor: <your-configuration-here>
+fritzdect_ip: <your-configuration-here>
+fritzdect_user: <your-configuration-here>
+fritzdect_password: <your-configuration-here>
+victron_ip: <your-configuration-here>
+victron_id: <your-configuration-here>
+influx_ip: <your-configuration-here>
+influx_db: <your-configuration-here>
+yamahaavr_ip: <your-configuration-here>
+fritzbox_ip: <your-configuration-here>
+fritzbox_user: <your-configuration-here>
+fritzbox_password: <your-configuration-here>
+shelly_dishwasher-washingmaschine_ip: <your-configuration-here>
+graph_timezone: <your-configuration-here>
+esphome_soilmoisture-a1_ip: <your-configuration-here>
+esphome_soilmoisture-a1_sensor: <your-configuration-here>
+esphome_soilmoisture-a2_ip: <your-configuration-here>
+esphome_soilmoisture-a2_sensor: <your-configuration-here>
+esphome_soilmoisture-a3_ip: <your-configuration-here>
+esphome_soilmoisture-a3_sensor: <your-configuration-here>
+esphome_soilmoisture-a4_ip: <your-configuration-here>
+esphome_soilmoisture-a4_sensor: <your-configuration-here>
+esphome_soilmoisture-a5_ip: <your-configuration-here>
+esphome_soilmoisture-a5_sensor: <your-configuration-here>
+esphome_soilmoisture-a6_ip: <your-configuration-here>
+esphome_soilmoisture-a6_sensor: <your-configuration-here>
+esphome_soilmoisture-a7_ip: <your-configuration-here>
+esphome_soilmoisture-a7_sensor: <your-configuration-here>
+esphome_soilmoisture-a8_ip: <your-configuration-here>
+esphome_soilmoisture-a8_sensor: <your-configuration-here>
+esphome_soilmoisture-b1_ip: <your-configuration-here>
+esphome_soilmoisture-b1_sensor: <your-configuration-here>
+esphome_soilmoisture-b2_ip: <your-configuration-here>
+esphome_soilmoisture-b2_sensor: <your-configuration-here>
+esphome_soilmoisture-b3_ip: <your-configuration-here>
+esphome_soilmoisture-b3_sensor: <your-configuration-here>
+esphome_soilmoisture-b4_ip: <your-configuration-here>
+esphome_soilmoisture-b4_sensor: <your-configuration-here>
+esphome_soilmoisture-b5_ip: <your-configuration-here>
+esphome_soilmoisture-b5_sensor: <your-configuration-here>
+esphome_soilmoisture-b6_ip: <your-configuration-here>
+esphome_soilmoisture-b6_sensor: <your-configuration-here>
+esphome_soilmoisture-b7_ip: <your-configuration-here>
+esphome_soilmoisture-b7_sensor: <your-configuration-here>
+esphome_soilmoisture-b8_ip: <your-configuration-here>
+esphome_soilmoisture-b8_sensor: <your-configuration-here>

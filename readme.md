@@ -2,6 +2,8 @@
 
 Simple hassle-free Python scripts to control common smart home devices.
 
+![Dashboard](scrn/2024-08-19-dashboard.png)
+
 Build automations by simply importing the "action"-functions into your own scripts and running them from crontab.
 
 Run them decentralized on your desktop computers, laptops, Android phone running Termux and Raspberry Pi home servers. 
